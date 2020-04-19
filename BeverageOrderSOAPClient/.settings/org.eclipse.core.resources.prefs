@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/com/model/Beverage.java=UTF-8
+encoding//src/com/service/BeverageServiceImpl.java=UTF-8
+encoding//src/com/service/BeverageServiceImplService.java=UTF-8
+encoding//src/com/service/BeverageServiceImplServiceLocator.java=UTF-8
+encoding//src/com/service/BeverageServiceImplSoapBindingStub.java=UTF-8

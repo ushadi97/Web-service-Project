@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.com" xmlns:intf="http://service.com" xmlns:tns1="http://model.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.com"/>
+   <element name="deleteBeverage">
+    <complexType>
+     <sequence>
+      <element name="beverageId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteBeverageResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteBeverageReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addBeverage">
+    <complexType>
+     <sequence>
+      <element name="b" type="tns1:Beverage"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addBeverageResponse">
+    <complexType>
+     <sequence>
+      <element name="addBeverageReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBeverage">
+    <complexType>
+     <sequence>
+      <element name="beverageId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBeverageResponse">
+    <complexType>
+     <sequence>
+      <element name="getBeverageReturn" type="tns1:Beverage"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllBeverages">
+    <complexType/>
+   </element>
+   <element name="getAllBeveragesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllBeveragesReturn" type="tns1:Beverage"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Beverage">
+    <sequence>
+     <element name="beveragType" nillable="true" type="xsd:string"/>
+     <element name="beverageId" type="xsd:int"/>
+     <element name="beverageName" nillable="true" type="xsd:string"/>
+     <element name="beveragePrice" type="xsd:double"/>
+     <element name="beverageQty" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getBeverageResponse">
+
+      <wsdl:part element="impl:getBeverageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteBeverageRequest">
+
+      <wsdl:part element="impl:deleteBeverage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addBeverageResponse">
+
+      <wsdl:part element="impl:addBeverageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllBeveragesRequest">
+
+      <wsdl:part element="impl:getAllBeverages" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllBeveragesResponse">
+
+      <wsdl:part element="impl:getAllBeveragesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteBeverageResponse">
+
+      <wsdl:part element="impl:deleteBeverageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addBeverageRequest">
+
+      <wsdl:part element="impl:addBeverage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBeverageRequest">
+
+      <wsdl:part element="impl:getBeverage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BeverageServiceImpl">
+
+      <wsdl:operation name="deleteBeverage">
+
+         <wsdl:input message="impl:deleteBeverageRequest" name="deleteBeverageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteBeverageResponse" name="deleteBeverageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addBeverage">
+
+         <wsdl:input message="impl:addBeverageRequest" name="addBeverageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addBeverageResponse" name="addBeverageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBeverage">
+
+         <wsdl:input message="impl:getBeverageRequest" name="getBeverageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBeverageResponse" name="getBeverageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllBeverages">
+
+         <wsdl:input message="impl:getAllBeveragesRequest" name="getAllBeveragesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllBeveragesResponse" name="getAllBeveragesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BeverageServiceImplSoapBinding" type="impl:BeverageServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="deleteBeverage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteBeverageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteBeverageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addBeverage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addBeverageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addBeverageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBeverage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBeverageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBeverageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllBeverages">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllBeveragesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllBeveragesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BeverageServiceImplService">
+
+      <wsdl:port binding="impl:BeverageServiceImplSoapBinding" name="BeverageServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8082/BeverageOrderSOAP/services/BeverageServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
